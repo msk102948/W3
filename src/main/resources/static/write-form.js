@@ -6,9 +6,9 @@ function postMemo() {
     let data = {'username': username , 'title': title, 'content': content};
 
     if (username == "" || title == "") {
-        alert('이름과 제목을 확인해주세요!');
+        alert('제목과 닉네임은 비워둘 수 없습니다.');
     }else if (content == "") {
-        alert('내용을 입력해주세요!');
+        alert('내용을 비워둘 수 없습니다.');
     } else {
         $.ajax({
             type: "POST",

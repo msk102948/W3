@@ -13,34 +13,32 @@
             crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="style.css">
+    <script src="title.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@200&display=swap" rel="stylesheet">
 
-    <title>스파르타코딩클럽 | 부트스트랩 연습하기</title>
+    <title>상세페이지</title>
 <!--    <script src="view.js"></script>-->
 </head>
 
 <body>
 <div th:insert="/title.html :: title"></div>
-<form action="postmemo" method="post">
 <div class="myPost">
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="title" name="title">
+        <input type="text" class="form-control" id="title" name="title" th:value="${memo.title}" disabled>
         <label for="title">제목</label>
     </div>
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="username" name="username">
-        <label for="username">닉네임</label>
+        <input type="text" class="form-control" id="username" name="username" th:value="${memo.username}" disabled>
     </div>
     <div class="form-floating">
             <textarea class="form-control" placeholder="코멘트" id="content"
-                      style="height: 100px"></textarea>
+                      style="height: 100px" th:value="${memo.content}" disabled></textarea>
         <label for="content">응원댓글</label>
     </div>
     <div class="mybtns">
-        <button type="button" class="btn btn-dark">응원남기기</button>
+        <button type="button" class="btn btn-dark" onclick="window.history.back()">뒤로가기</button>
     </div>
 </div>
-</form>
 </body>
 
 </html>
