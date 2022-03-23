@@ -21,7 +21,7 @@
 </head>
 
 <body>
-<div th:insert="/title.html :: title"></div>
+<div th:insert="title.html :: title"></div>
 <div class="myPost">
     <div class="form-floating mb-3">
         <input type="text" class="form-control" id="title" name="title" th:value="${memo.title}" disabled>
